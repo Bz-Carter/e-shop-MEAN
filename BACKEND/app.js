@@ -1,20 +1,21 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const bodyParser = require("body-parser");
-const morgan = require("morgan");
-const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const mongoose = require('mongoose');
 const cors = require('cors');
-require("dotenv/config");
+require('dotenv/config');
 const authJwt = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler');
 
 app.use(cors());
-app.options('*', cors())
+app.options('*', cors());
 
 // Midlleware
 app.use(bodyParser.json());
-app.use(morgan("tiny"));
+app.use(morgan('tiny'));
 app.use(authJwt());
+app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
 app.use(errorHandler);
 
 //Routes
@@ -32,18 +33,18 @@ app.use(`${api}/orders`, ordersRoutes);
 
 //Database
 mongoose
-  .connect(process.env.CONNECTION_STRING, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: "mean-eshop",
-  })
-  .then(() => {
-    console.log("Database Conncetion is Ready...");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+    .connect(process.env.CONNECTION_STRING, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        dbName: 'mean-eshop'
+    })
+    .then(() => {
+        console.log('Database Conncetion is Ready...');
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 app.listen(3000, () => {
-  console.log("server is running http://localhost:3000");
+    console.log('server is running http://localhost:3000');
 });
