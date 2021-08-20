@@ -15,7 +15,10 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@tel-shop/ui": ["libs/ui/src/index.ts"]
+            "@tel-shop/orders": ["libs/orders/src/index.ts"],
+            "@tel-shop/products": ["libs/products/src/index.ts"],
+            "@tel-shop/ui": ["libs/ui/src/index.ts"],
+            "@tel-shop/users": ["libs/users/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

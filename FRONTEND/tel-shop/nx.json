@@ -41,7 +41,16 @@
             "tags": [],
             "implicitDependencies": ["ng-tel-shop"]
         },
+        "orders": {
+            "tags": []
+        },
+        "products": {
+            "tags": []
+        },
         "ui": {
+            "tags": []
+        },
+        "users": {
             "tags": []
         }
     }
