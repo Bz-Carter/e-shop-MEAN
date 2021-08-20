@@ -40,6 +40,9 @@
         "ng-tel-shop-e2e": {
             "tags": [],
             "implicitDependencies": ["ng-tel-shop"]
+        },
+        "ui": {
+            "tags": []
         }
     }
 }
