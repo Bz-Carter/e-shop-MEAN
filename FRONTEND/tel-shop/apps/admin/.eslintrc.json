@@ -10,7 +10,7 @@
                     "error",
                     {
                         "type": "attribute",
-                        "prefix": "telShop",
+                        "prefix": "admin",
                         "style": "camelCase"
                     }
                 ],
@@ -18,7 +18,7 @@
                     "error",
                     {
                         "type": "element",
-                        "prefix": "tel-shop",
+                        "prefix": "admin",
                         "style": "kebab-case"
                     }
                 ]
