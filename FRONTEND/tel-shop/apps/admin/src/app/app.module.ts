@@ -28,6 +28,7 @@ import { ShellComponent } from './shared/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { CategoriesListComponent } from './pages/categories/categories-list/categories-list.component';
 import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
+import { ProductsListComponent } from './pages/products/products-list/products-list.component';
 
 const UX_MODULE = [CardModule, ColorPickerModule, ConfirmDialogModule, ToastModule, ToolbarModule, ButtonModule, TableModule, InputTextModule];
 
@@ -52,6 +53,7 @@ const routes: Routes = [
     SidebarComponent,
     CategoriesListComponent,
     CategoriesFormComponent,
+    ProductsListComponent,
   ],
   imports: [
     BrowserModule,
