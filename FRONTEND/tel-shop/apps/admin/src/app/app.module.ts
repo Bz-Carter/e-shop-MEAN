@@ -1,46 +1,59 @@
-//Angular Module
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ShellComponent } from './shared/shell/shell.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CategoriesListComponent } from './pages/categories/categories-list/categories-list.component';
 
-//PrimeNG module
-import { ConfirmationService, MessageService } from 'primeng/api';
 import { CardModule } from 'primeng/card';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
-import { InputTextModule } from 'primeng/inputtext';
-import {ToastModule} from 'primeng/toast';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import {ColorPickerModule} from 'primeng/colorpicker';
-
-//services 
-import { Routes } from '@angular/router';
-import { CategoriesService } from '@tel-shop/products';
-
-//component
-import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { ShellComponent } from './shared/shell/shell.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { CategoriesListComponent } from './pages/categories/categories-list/categories-list.component';
+import { CategoriesService } from '@bluebits/products';
 import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
-import { ProductsListComponent } from './pages/products/products-list/products-list.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ColorPickerModule } from 'primeng/colorpicker';
 
-const UX_MODULE = [CardModule, ColorPickerModule, ConfirmDialogModule, ToastModule, ToolbarModule, ButtonModule, TableModule, InputTextModule];
+const UX_MODULE = [
+  CardModule,
+  ToastModule,
+  InputTextModule,
+  TableModule,
+  ToolbarModule,
+  ButtonModule,
+  ConfirmDialogModule,
+  ColorPickerModule
+];
 
 const routes: Routes = [
   {
     path: '',
     component: ShellComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'categories', component: CategoriesListComponent },
-      { path: 'categories/form', component: CategoriesFormComponent },
-      { path: 'categories/form/:id', component: CategoriesFormComponent },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: 'categories',
+        component: CategoriesListComponent
+      },
+      {
+        path: 'categories/form',
+        component: CategoriesFormComponent
+      },
+      {
+        path: 'categories/form/:id',
+        component: CategoriesFormComponent
+      }
     ]
   }
 ];
@@ -48,12 +61,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    ShellComponent,
     SidebarComponent,
+    ShellComponent,
+    DashboardComponent,
     CategoriesListComponent,
-    CategoriesFormComponent,
-    ProductsListComponent,
+    CategoriesFormComponent
   ],
   imports: [
     BrowserModule,

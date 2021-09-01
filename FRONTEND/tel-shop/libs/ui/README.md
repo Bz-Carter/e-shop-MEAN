@@ -1,10 +1,6 @@
 # ui
 
-This library containes the ui component which are use in the Tel Shop corporate
-
-# Banner
-# Slider
-# Stepper
+This library was generated with [Nx](https://nx.dev).
 
 ## Running unit tests
 
